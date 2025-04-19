@@ -40,23 +40,70 @@ main {
     flex: 1;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
+    padding-top: 50px;
 }
 
-.content-placeholder {
+.content-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    max-width: 800px;
+}
+
+.message-container {
     background-color: #1a2634;
     border: 1px solid #2a3a4a;
     border-radius: 8px;
-    padding: 40px;
+    padding: 30px;
     text-align: center;
-    width: 80%;
-    max-width: 800px;
+    width: 100%;
+    margin-bottom: 40px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
 }
 
-.content-placeholder p {
+.message-container p {
     font-size: 1.5rem;
     color: #2196f3;
+}
+
+.admiral-options {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    width: 100%;
+}
+
+.admiral-option {
+    width: 150px;
+    height: 150px;
+    background-color: #1a2634;
+    border: 1px solid #2a3a4a;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.admiral-option:hover {
+    background-color: #2a3a4a;
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.admiral-option.add-new {
+    background-color: rgba(26, 38, 52, 0.7);
+}
+
+.plus-symbol {
+    font-size: 3rem;
+    color: #ff9800;
+    font-weight: bold;
 }
 
 /* Footer Styles */
