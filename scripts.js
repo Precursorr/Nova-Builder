@@ -41,8 +41,40 @@ document.addEventListener('DOMContentLoaded', () => {
     admiralCards.forEach(card => {
         card.addEventListener('click', () => {
             const admiralName = card.querySelector('.admiral-name').textContent;
-            alert(`Selected ${admiralName}`);
             admiralModal.classList.remove('show');
+
+            // Special case for Admiral Morpheus
+            if (admiralName === 'Admiral Morpheus') {
+                // Clear the main content, keeping only header and footer
+                const contentContainer = document.querySelector('.content-container');
+                if (contentContainer) {
+                    // Hide the content container
+                    contentContainer.style.display = 'none';
+
+                    // Add a return button after a short delay
+                    setTimeout(() => {
+                        // Create a return button
+                        const returnButton = document.createElement('button');
+                        returnButton.className = 'return-button';
+                        returnButton.textContent = 'Return to Admiral Selection';
+
+                        // Add click event to return button
+                        returnButton.addEventListener('click', () => {
+                            // Remove the return button
+                            returnButton.remove();
+
+                            // Show the content container again
+                            contentContainer.style.display = 'flex';
+                        });
+
+                        // Add it to the main element
+                        document.querySelector('main').appendChild(returnButton);
+                    }, 500);
+                }
+            } else {
+                // For other admirals, just show an alert for now
+                alert(`Selected ${admiralName}`);
+            }
         });
     });
 });
