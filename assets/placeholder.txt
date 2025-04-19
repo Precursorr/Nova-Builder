@@ -1,0 +1,9 @@
+This folder would normally contain ship images and UI icons.
+For a real implementation, you would need to add actual image files here.
+
+In the current implementation, the code references image paths like:
+- assets/ship1.png
+- assets/ship2.png
+- etc.
+
+These would need to be replaced with actual images for the application to display properly.
